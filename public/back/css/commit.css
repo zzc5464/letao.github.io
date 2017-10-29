@@ -30,6 +30,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    transition: all 1s;
+}
+.aside.active {
+    left: -180px;
 }
 .lt_title {
     width: 100%;
@@ -70,8 +74,15 @@ body {
     background: #1d1f21;
     color: #fff;
 }
+.lt_menu .cate_son a{
+    padding-left: 50px;
+}
 section {
     padding-left: 180px;
+    transition: all 1s;
+}
+section.active {
+    padding-left:0;
 }
 section .lt_top {
     height: 50px;
@@ -83,6 +94,10 @@ section .lt_top a {
     color: #fff;
     vertical-align: middle;
     font-size:20px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
 }
 .lt_content {
     padding-top: 20px;
