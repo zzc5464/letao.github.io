@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>首页</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/commit.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<div class="aside">
+    <div class="lt_title"><a href="index.html">帅逼后台管理系统</a></div>
+    <div class="user_box">
+        <img src="images/default.png" alt="">
+        <span>大帅比</span>
+    </div>
+    <div class="lt_menu">
+        <ul>
+            <li><a href="user.html"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
+            <li>
+                <a class="lt_cate" href="javascript:;"><i class="glyphicon glyphicon-list"></i> 分类管理</a>
+                <div class="cate_son" style="display: none;">
+                    <a href=cate_one.html class="cate_one">人间大炮一级准备</a>
+                    <a href=cate_two.html class="cate_two">人间大炮二级准备</a>
+                </div>
+            </li>
+            <li><a class="current" href="goods.html"><i class="glyphicon glyphicon-tags"></i> 商品管理</a></li>
+        </ul>
+    </div>
+</div>
+<section>
+    <div class="lt_top">
+        <a class='top_left_icon glyphicon glyphicon-align-justify pull-left' href="javascript:;"></a>
+        <a class='top_right_icon glyphicon glyphicon-log-out pull-right' href="" data-toggle="modal" data-target="#lt_model"></a>
+    </div>
+    <div class="lt_content container-fluid">
+        <ol class="breadcrumb">
+            <li class=""><a href="index.html">首页</a></li>
+            <li class="active"><a href="goods.html">商品管理</a></li>
+        </ol>
+    </div>
+</section>
+<div class="modal fade" tabindex="-1" id="lt_model">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提了个示</h4>
+            </div>
+            <div class="modal-body text-danger">
+                <i class="glyphicon glyphicon-info-sign"></i><span> 帅哥真的要走吗</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button id="quit" type="button" class="btn btn-danger">退出</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="js/commit.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>

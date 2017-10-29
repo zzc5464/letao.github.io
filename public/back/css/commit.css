@@ -68,8 +68,10 @@ body {
     color: #aaa;
     padding-left: 30px;
     border:3px solid transparent;
+
 }
-.lt_menu li.current a {
+
+.lt_menu li a.current {
     border-left-color: #3c8dbc;
     background: #1d1f21;
     color: #fff;
