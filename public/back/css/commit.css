@@ -1,7 +1,89 @@
+/*全局样式*/
+ul,ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+a:hover,a:active,a:link,a:visited {
+    text-decoration: none;
+}
+/*登录页面*/
 .login-box {
     padding-top: 150px;
 }
 .login-box .panel-heading {
     text-align: center;
     height: 60px;
+}
+/*后台左侧和top栏的样式*/
+/*aside*/
+body {
+    height: 2000px;
+}
+.aside {
+    width: 180px;
+    height: 100%;
+    background-color: #222d32;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.lt_title {
+    width: 100%;
+    height: 50px;
+    background-color: #367fa9;
+    line-height: 50px;
+    text-align: center;
+}
+.lt_title a {
+    font-size:16px;
+    color: #fff;
+    font-weight:600;
+}
+.user_box {
+    padding:30px 20px;
+}
+.user_box img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.user_box span {
+    color: #fff;
+    font-size: 16px;
+}
+.lt_menu li a {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    color: #aaa;
+    padding-left: 30px;
+    border:3px solid transparent;
+}
+.lt_menu li.current a {
+    border-left-color: #3c8dbc;
+    background: #1d1f21;
+    color: #fff;
+}
+section {
+    padding-left: 180px;
+}
+section .lt_top {
+    height: 50px;
+    line-height: 50px;
+    background-color: #3c8dbc;
+    padding: 12px 20px;
+}
+section .lt_top a {
+    color: #fff;
+    vertical-align: middle;
+    font-size:20px;
+}
+.lt_content {
+    padding-top: 20px;
 }
