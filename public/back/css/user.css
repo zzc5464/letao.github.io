@@ -1,0 +1,10 @@
+.user_ls {
+    padding: 0 20px;
+    text-align: center;
+}
+.user_ls th {
+    text-align: center;
+}
+.user_ls tr td {
+    vertical-align: middle !important;
+}
