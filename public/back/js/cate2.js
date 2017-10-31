@@ -111,8 +111,11 @@
     });
 
     $form.on("success.form.bv", function (e) {
-        e.preventDefault();
 
+        e.preventDefault();
+        //categoryId=6&brandName=ssd&brandLogo=%2Fupload%2Fbrand%2F437e2600-be3e-11e7-9515-dfe664f6f7f2.jpg
+        //brandName  categoryId  brandLogo
+        console.log($form.serialize());
         //发送ajax请求，把二级分类存起来
         $.ajax({
             type:"post",
@@ -120,10 +123,36 @@
             data:$form.serialize(),
             success:function (data) {
                 if(data.success){
-                    console.log(data);
+                    $("#lt_statusMod").modal("hide");
+                    //2. 渲染第一页
+                    currentPage = 1;
+                    render();
+                    //3. 重置表单
+                    $form[0].reset();
+                    $form.data("bootstrapValidator").resetForm();
+                    //手动把dropdown重置，把图片的地址重置
+                    $("#cate1").text(" -- 请选择一级分类 -- ");
+                    $(".uploadImg img").attr("src", "images/none.png");
                 }
             }
         });
     })
 
 })();
+//(function(){
+//    $("#outBtn").on("click",function(){
+//        $.ajax({
+//            type:"post",
+//            url:"/category/addSecondCategory",
+//            data:{
+//                brandName:"张三",
+//                categoryId:"4",
+//                brandLogo:"1.jpg",
+//                hot:0
+//            },
+//            success: function (data) {
+//                console.log(data);
+//            }
+//        })
+//    })
+//})();

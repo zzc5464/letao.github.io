@@ -56,12 +56,13 @@
                     <th>二级分类LOGO</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="goods_imgBox">
                 <!--坑-->
                 </tbody>
             </table>
         </div>
     </div>
+    <!--<button id="outBtn" class="btn btn-danger">接口测试</button>-->
 </section>
 <!--模态框-->
 <div class="modal fade" tabindex="-1" id="lt_model">
@@ -89,7 +90,8 @@
                 <h4 class="modal-title">添加分类</h4>
             </div>
             <div class="modal-body">
-                <form id="form" action="#">
+                <form id="form">
+                    <input type="hidden" name="hot" value="0">
                     <div class="form-group">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -103,7 +105,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+                        <input type="text" id="brandName" name="brandName" class="form-control" placeholder="请输入二级分类">
                     </div>
                     <div class="form-group upload-img-box">
                         <button class="btn btn-default">请上传图片</button>
