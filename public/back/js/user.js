@@ -40,7 +40,21 @@
         var status = $(this).parent().data("status");
         $("#lt_statusMod").modal("show");
         $("#status_change").off().on("click", function () {
-            console.log(11);
+            status = status==1?"0":"1";
+            $.ajax({
+                type:"post",
+                url:"/user/updateUser",
+                data:{
+                    id:id,
+                    isDelete:status
+                },
+                success: function (data) {
+                    if(data.success) {
+                        $("#lt_statusMod").modal("hide");
+                        render();
+                    }
+                }
+            })
         })
     })
 })();
