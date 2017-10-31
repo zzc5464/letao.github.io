@@ -14,6 +14,7 @@
                 pageSize:pages
             },
             success: function (data) {
+                console.log(data);
                 var html = template("tmp",data);
                 $("tbody").html(html);
                 $(".user_pages").bootstrapPaginator({
@@ -56,7 +57,6 @@
     })
     form.on("success.form.bv", function (e) {
         e.preventDefault();
-        console.log(11);
         $.ajax({
             type:"post",
             url:'/category/addTopCategory',

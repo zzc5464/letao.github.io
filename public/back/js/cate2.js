@@ -75,7 +75,7 @@
     });
 
 
-    //二级表单验证，这里不用验证一级表单了，直接换掉
+    //
     var $form = $("#form");
     $form.bootstrapValidator({
         //默认不校验的配置
