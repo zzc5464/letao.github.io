@@ -82,6 +82,7 @@ body {
 }
 section {
     padding-left: 180px;
+    padding-top: 50px;
     transition: all 1s;
 }
 section.active {
@@ -113,4 +114,20 @@ section .lt_top a {
 }
 .lt_content {
     padding-top: 20px;
+}
+/*添加分类按钮，大家一起用*/
+#add_btn {
+    margin-bottom: 20px;
+}
+
+/*上传单个图片按钮*/
+.upload-img-box {
+    position: relative;
+}
+/*真按钮*/
+#fileupload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }

@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>二级大炮</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="css/commit.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
 <div class="aside">
@@ -17,10 +18,10 @@
     </div>
     <div class="lt_menu">
         <ul>
-            <li><a href="user.html"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
+            <li><a  href="user.html"><i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
             <li>
                 <a class="lt_cate" href="javascript:;"><i class="glyphicon glyphicon-list"></i> 分类管理</a>
-                <div class="cate_son" style="">
+                <div class="cate_son" style="display: block;">
                     <a href=cate_one.html class="cate_one">人间大炮一级准备</a>
                     <a href=cate_two.html class="cate_two current">人间大炮二级准备</a>
                 </div>
@@ -36,12 +37,33 @@
     </div>
     <div class="lt_content container-fluid">
         <ol class="breadcrumb">
-            <li class=""><a href="index.html">首页</a></li>
-            <li class=""><a href="#">分类管理</a></li>
-            <li class="active"><a href="cate_two.html">人间大炮二级准备</a></li>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="user.html">分类管理</a></li>
+            <li><a class="active" href="cate_two.html">人间大炮二级准备</a></li>
         </ol>
+        <button id="add_btn" class="btn btn-default">添加分类</button>
+        <!--用户列表-->
+        <div class="user_ls">
+            <ul class="user_pages">
+
+            </ul>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>一级分类名称</th>
+                    <th>二级分类名称</th>
+                    <th>二级分类LOGO</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--坑-->
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
+<!--模态框-->
 <div class="modal fade" tabindex="-1" id="lt_model">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -59,10 +81,84 @@
         </div>
     </div>
 </div>
+<div class="modal fade" tabindex="-1" id="lt_statusMod">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">添加分类</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form" action="#">
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span id="cate1">-- 请选择一级分类 --</span>
+                                <input type="hidden" name="categoryId" id="categoryId">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu cate-one-box" aria-labelledby="dropdownMenu1">
+                                <!--模板坑-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+                    </div>
+                    <div class="form-group upload-img-box">
+                        <button class="btn btn-default">请上传图片</button>
+                        <input id="fileupload" type="file" name="pic1" class="btn btn-default" data-url="/category/addSecondCategoryPic">
+                    </div>
+                    <div class="form-group uploadImg">
+                        <img src="images/none.png" width="100" height="100" alt="">
+                        <input type="hidden" name="brandLogo" id="brandLogo">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button id="status_change" form="form" type="submit" class="btn btn-danger">加TMD</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--二级分类模板-->
+<script type="text/html" id="tmp">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td>
+            <img src="{{v.brandLogo}}" alt="">
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<!--一级分类模板-->
+<script type="text/html" id="cart_one_tmp">
+    {{each rows v i}}
+    <li><a href="javascript:;" class="cateName" data-id="{{v.id}}">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="js/commit.js"></script>
-<script src="js/index.js"></script>
+<script src="js/cate2.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
