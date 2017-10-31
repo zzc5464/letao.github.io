@@ -79,6 +79,23 @@
         </div>
     </div>
 </div>
+<div class="modal fade" tabindex="-1" id="lt_statusMod">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提了个示</h4>
+            </div>
+            <div class="modal-body text-danger">
+                <i class="glyphicon glyphicon-info-sign"></i><span> 帅哥真的不反悔吗？</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button id="status_change" type="button" class="btn btn-danger">改TMD</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/html" id="tmp">
     {{each rows v i}}
     <tr>
@@ -86,7 +103,7 @@
         <td>{{v.username}}</td>
         <td>{{v.mobile}}</td>
         <td>{{v.isDelete===1?"启用":"禁用"}}</td>
-        <td width="20%">
+        <td class="lt_status" width="20%" data-id="{{v.id}}" data-status="{{v.isDelete}}">
             {{if(v.isDelete==1)}}
             <button class="btn btn-danger">禁用</button>
             {{else if(v.isDelete == 0)}}

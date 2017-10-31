@@ -1,6 +1,7 @@
 /**
  * Created by zzc on 2017/10/29.
  */
+//分页
 ;(function () {
     var current = 1;
     var pages = 5;
@@ -32,4 +33,14 @@
         })
     }
     render();
+
+    $("tbody").on("click",".btn", function () {
+
+        var id = $(this).parent().data("id");
+        var status = $(this).parent().data("status");
+        $("#lt_statusMod").modal("show");
+        $("#status_change").off().on("click", function () {
+            console.log(11);
+        })
+    })
 })();
