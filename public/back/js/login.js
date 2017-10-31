@@ -50,11 +50,12 @@
             url:'/employee/employeeLogin',
             data:form.serialize(),
             success: function (data) {
-                console.log(data);
+
                 if(data.success) {
                     location.href = "index.html"
                 }
                 if(data.error == 1000) {
+                    console.log(form.serialize());
                     validator.updateStatus("username", "INVALID", "callback");
                 }else {
                     validator.updateStatus("password", "INVALID", "callback");
@@ -64,6 +65,13 @@
     })
     $("button[type='reset']").on('click', function () {
         validator.resetForm();
-        console.log(11);
     })
 })();
+
+
+
+
+
+
+
+

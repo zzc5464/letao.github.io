@@ -1,3 +1,4 @@
+//判断用户是否登录
 ;(function(){
     //判断用户是否登录
     if(location.href.indexOf("login.html") === -1) {
@@ -12,6 +13,7 @@
         })
     }
 })();
+//使用NPogress插件
 ;(function () {
     $(document).ajaxStart(function () {
         NProgress.start();
@@ -22,6 +24,7 @@
         }, 500);
     });
 })();
+//管理系统的左边栏特效
 ;(function () {
     $('.lt_cate').on("click",function(){
         $(".cate_son").slideToggle();
