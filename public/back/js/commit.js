@@ -33,6 +33,7 @@
     $(".top_left_icon").on("click", function () {
         $(".aside").toggleClass("active");
         $("section").toggleClass("active");
+        $(".lt_top").toggleClass("active");
     })
 
     $("#quit").on('click', function () {
