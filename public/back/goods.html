@@ -100,6 +100,7 @@
                                     aria-haspopup="true" aria-expanded="true">
                                 <span class="dropdown-text">请选择二级分类</span>
                                 <input type="hidden" name="brandId" id="brandId">
+                                <input type="hidden" name="status" value="0">
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -125,7 +126,6 @@
                     <div class="form-group">
                         <input type="text" class="form-control" name="price" placeholder="请输入商品折扣价">
                     </div>
-
                     <div class="form-group">
                         <div class="fileupload_box upload-img-box">
                             <button class="btn btn-default">上传图片</button>
@@ -133,10 +133,9 @@
                                    data-url="/product/addProductPic">
                         </div>
                     </div>
-
                     <div class="form-group img_box">
                         <!--上传成功之后图片append到这里来-->
-                        <input type="hidden" name="brandLogo" id="brandLogo">
+                        <input type="hidden" name="productLogo" id="productLogo">
                     </div>
                 </form>
             </div>
@@ -150,7 +149,7 @@
 <!--二级分类模板-->
 <script type='text/html' id="goods_tmp">
     {{each rows v i}}
-    <li class="cate_name">{{v.categoryName}}</li>
+    <li class="cate_name" data-id="{{v.id}}">{{v.categoryName}}</li>
     {{/each}}
 </script>
 <!--商品部分模板-->

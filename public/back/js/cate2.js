@@ -58,6 +58,7 @@
         $("#categoryId").val(cate_id);
         $form.data("bootstrapValidator").updateStatus("categoryId", "VALID");
     });
+
     //初始化上传图片插件
     $("#fileupload").fileupload({
         dataType:"json",
@@ -111,11 +112,7 @@
     });
 
     $form.on("success.form.bv", function (e) {
-
         e.preventDefault();
-        //categoryId=6&brandName=ssd&brandLogo=%2Fupload%2Fbrand%2F437e2600-be3e-11e7-9515-dfe664f6f7f2.jpg
-        //brandName  categoryId  brandLogo
-        console.log($form.serialize());
         //发送ajax请求，把二级分类存起来
         $.ajax({
             type:"post",
