@@ -2,9 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>乐淘商城--首页</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
+<div class="container">
+    <header>
+        <a href="javascript:history.go(-1);" class="fa fa-arrow-left lt_back"></a>
+        <h4>乐淘首页</h4>
+        <!--<a href="search.html" class="fa fa-search lt_search"></a>-->
+    </header>
 
+
+    <section>
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里就是页面内容-->
+                <div class="search">
+                    <input type="text" placeholder='请输入商品名称'>
+                    <button class='mui-btn-blue'>搜索</button>
+                </div>
+                <div class='history mui-clearfix'>
+                    <span class="mui-pull-left">搜索历史</span>
+                    <span class="mui-pull-right fa fa-trash">清空记录</span>
+                    <ul class='search_content'>
+                        <li>
+                            <a href="#">历史</a>
+                            <i class='fa fa-close'></i>
+                        </li>
+                        <li>
+                            <a href="#">历史</a>
+                            <i class='fa fa-close'></i>
+                        </li>
+                        <li>
+                            <a href="#">历史</a>
+                            <i class='fa fa-close'></i>
+                        </li>
+                        <li>
+                            <a href="#">历史</a>
+                            <i class='fa fa-close'></i>
+                        </li>
+                        <li>
+                            <a href="#">历史</a>
+                            <i class='fa fa-close'></i>
+                        </li>
+                        <li>
+                            <a href="#">历史</a>
+                            <i class='fa fa-close'></i>
+                        </li>
+                    </ul>
+                </div>
+                <!--拖动结尾部分-->
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        <ul class="mui-clearfix">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="goods.html">
+                    <i class="fa fa-car"></i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="vip.html">
+                    <i class="fa fa-user"></i>
+                    <p>个人中心</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="js/commont.js"></script>
+<script src="js/search.js"></script>
 </body>
 </html>

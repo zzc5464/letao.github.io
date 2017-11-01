@@ -2,6 +2,7 @@
 /*样式初始化*/
 html,body {
     height: 100%;
+    background-color: #fff;
 }
 ul,ol {
    list-style: none;
