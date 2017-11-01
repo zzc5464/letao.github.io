@@ -1,0 +1,99 @@
+
+/*样式初始化*/
+html,body {
+    height: 100%;
+}
+ul,ol {
+   list-style: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*公共样式*/
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width:640px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding:45px 0 55px 0;
+}
+header {
+    height: 45px;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    z-index: 999;
+    padding: 10px;
+    text-align: center;
+    line-height: 45px;
+    background-color: #069;
+}
+header .lt_back,
+header .lt_search {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    font-size:16px;
+}
+header h4 {
+    color: #fff;
+    font-weight:400;
+}
+header .lt_back {
+    left: 0;
+}
+header .lt_search {
+    right: 0;
+}
+footer {
+    height: 55px;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    position: fixed;
+    bottom: 0;
+    background-color: #069;
+    margin: 0 auto;
+    z-index: 999;
+}
+footer li {
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+footer li a {
+    text-align: center;
+    color:#fff;
+    padding-top: 10px;
+}
+footer p {
+    color: #fff;
+}
+footer li.current a {
+    color: darkorange;
+}
+footer li.current p{
+    color: darkorange;
+}
+
+/*页面内容*/
+section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
