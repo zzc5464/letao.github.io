@@ -1,44 +1,60 @@
-/**
- * Created by zzc on 2017/11/1.
- */
-//function getParam(){
-//    var param = location.search.slice(1);
-//    //?id=1&name=zs
-//    var arr = param.split("&");
-//    var newObj = {};
-//    for(var i=0;i<arr.length;i++ ) {
-//        var key = arr[i].split("=")[0];
-//        var val = decodeURI(arr[i].split("=")[1]);
-//        newObj[key] = val;
-//    }
-//    return newObj;
-//}
-//var r = getParamName("out");
-//
-//function getParamName(key){
-//    return getParam()[key]
-//}
 
-class Tool{
-    constructor(){
-        console.log(this.getParam());
-    }
-    getParam(){
-        var param = location.search.slice(1);
-        //?id=1&name=zs
-        var arr = param.split("&");
-        var newObj = {};
-        for(var i=0;i<arr.length;i++ ) {
-            var key = arr[i].split("=")[0];
-            var val = decodeURI(arr[i].split("=")[1]);
-            newObj[key] = val;
-        }
-        return newObj;
-    }
-    getParamName(key){
-        return this.getParam()[key]
-    }
+//获取localStorage,渲染到页面上
+
+render();
+function getHs(){
+    var hs = localStorage.getItem("hs")||"[]";
+    var hsArr = JSON.parse(hs);
+    return hsArr;
 }
-var t = new Tool()
-console.log(t.getParam());
-console.log(t.getParamName("out"));
+function render(){
+    var hsArr = getHs();
+    console.log(hsArr);
+    $(".history").html( template('hsTmp',{hsArr:hsArr}) );
+}
+
+//删除数据
+$(".history").on("click",".mui-pull-right", function () {
+    localStorage.removeItem("hs");
+    render();
+})
+//删除单条数据
+$(".history").on("click",".fa-close", function () {
+    var btnArr = ["算了","删吧"];
+    mui.confirm("你确定要删除这条记录吗","警告", btnArr, function (data) {
+        console.log(data);
+        if(data.index==1) {
+            var hsArr = getHs();
+            var i = $(this).data("index");
+            hsArr.splice(i,1);
+            localStorage.setItem('hs',JSON.stringify(hsArr));
+            render();
+        }
+    })
+})
+//添加一条
+$(".mui-btn-blue").on("click", function () {
+    var val = $(".search_text").val().trim();
+    if(val=='') {
+        mui.alert("亲，你想买啥", "温馨提示");
+        $(".search_text").val('');
+        return;
+    }
+    var hs = getHs();
+    //判断是否在原来有
+    var index = hs.indexOf(val);
+    if(index>-1) {
+        hs.splice(index,1);
+    }
+    //判断是否超过10
+    if(hs.length>=10) {
+        hs.pop();
+        //hs.unshift(val);
+    }
+    hs.unshift(val);
+    localStorage.setItem('hs',JSON.stringify(hs));
+    render();
+
+    //页面跳转
+    location.href = "searchList.html?key="+val;
+})

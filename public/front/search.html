@@ -25,38 +25,11 @@
             <div class="mui-scroll">
                 <!--这里就是页面内容-->
                 <div class="search">
-                    <input type="text" placeholder='请输入商品名称'>
+                    <input class="search_text" type="text" placeholder='请输入商品名称'>
                     <button class='mui-btn-blue'>搜索</button>
                 </div>
                 <div class='history mui-clearfix'>
-                    <span class="mui-pull-left">搜索历史</span>
-                    <span class="mui-pull-right fa fa-trash">清空记录</span>
-                    <ul class='search_content'>
-                        <li>
-                            <a href="#">历史</a>
-                            <i class='fa fa-close'></i>
-                        </li>
-                        <li>
-                            <a href="#">历史</a>
-                            <i class='fa fa-close'></i>
-                        </li>
-                        <li>
-                            <a href="#">历史</a>
-                            <i class='fa fa-close'></i>
-                        </li>
-                        <li>
-                            <a href="#">历史</a>
-                            <i class='fa fa-close'></i>
-                        </li>
-                        <li>
-                            <a href="#">历史</a>
-                            <i class='fa fa-close'></i>
-                        </li>
-                        <li>
-                            <a href="#">历史</a>
-                            <i class='fa fa-close'></i>
-                        </li>
-                    </ul>
+                    <!--tmp-->
                 </div>
                 <!--拖动结尾部分-->
             </div>
@@ -95,9 +68,26 @@
         </ul>
     </footer>
 </div>
-
+<script type="text/html" id='hsTmp'>
+    {{if hsArr.length == 0}}
+    <p>没有搜索记录</p>
+    {{/if}}
+    {{if hsArr.length >0}}
+    <span class="mui-pull-left">搜索历史</span>
+    <span class="mui-pull-right fa fa-trash"> 清空记录</span>
+    <ul class='search_content'>
+        {{each hsArr v i}}
+        <li>
+            <a href="searchList.html?key={{v}}">{{v}}</a>
+            <i class='fa fa-close' data-index="{{i}}"></i>
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</script>
 <script src="lib/mui/js/mui.min.js"></script>
 <script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/commont.js"></script>
 <script src="js/search.js"></script>
 </body>

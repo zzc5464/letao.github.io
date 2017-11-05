@@ -1,0 +1,8 @@
+.register {
+    text-align:right;
+}
+.register a {
+    height: 40px;
+    line-height: 40px;
+    padding-right: 20px;
+}

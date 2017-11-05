@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>乐淘商城--商品详情</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <a href="javascript:history.go(-1);" class="fa fa-arrow-left lt_back"></a>
+        <h4>商品详情</h4>
+        <a href="javascript:history.go(0);" class="fa fa-refresh lt_search"></a>
+    </header>
+
+
+    <section>
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里就是页面内容-->
+
+                <!--拖动结尾部分-->
+            </div>
+        </div>
+    </section>
+    <footer class="pro_foot">
+        <a href="goods.html" class="mui-btn-link mui-pull-left">去购物车</a>
+        <div class="btn_box mui-pull-right">
+            <button class="mui-btn-danger">加入购物车</button>
+            <button class="mui-btn-warning">立即购买</button>
+        </div>
+    </footer>
+</div>
+<script type="text/html" id='proTmp'>
+    <div class="mui-slider">
+        <div class="mui-slider-group mui-slider-loop">
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[pic.length-1].picAddr}}" /></a></div>
+            {{each pic v i}}
+            <div class="mui-slider-item"><a href="#"><img src="{{v.picAddr}}" /></a></div>
+            {{/each}}
+            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{pic[0].picAddr}}" /></a></div>
+        </div>
+        <div class="mui-slider-indicator">
+            {{each pic v i}}
+            <div class="mui-indicator {{i==0?'mui-active':''}}"></div>
+           {{/each}}
+        </div>
+    </div>
+    <div class="item">
+        <h4>{{proName}}</h4>
+    </div>
+    <div class="item price">
+        价格：
+        <span>&yen;{{price}}</span>
+        <span>&yen;{{oldPrice}}</span>
+    </div>
+    <div class="item size">
+        尺码:
+        {{each sizeLen v i}}
+        <span class="sizeItem">{{v}}</span>
+        {{/each}}
+    </div>
+    <div class="item">
+        数量:
+        <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{num}}'>
+            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+            <input class="mui-numbox-input" type="number" />
+            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+        </div>
+        <span class="pro_num">剩余数量:{{num}}双</span>
+    </div>
+    <div class="item">
+        描述：{{proDesc}}
+    </div>
+</script>
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/commont.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>乐淘商城--个人中心</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vip.css">
 </head>
 <body>
+<div class="container">
+    <header>
+        <a href="javascript:history.go(-1);" class="fa fa-arrow-left lt_back"></a>
+        <h4>个人中心</h4>
+        <!--<a href="search.html" class="fa fa-search lt_search"></a>-->
+    </header>
+    <section>
+        <ul class="mui-table-view">
+            <li class="user_info mui-table-view-cell mui-media">
+                <!--keng-->
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">帐号和安全</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href='goods.html' class="mui-navigate-right">购物车</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">我的信息</a>
+            </li>
+        </ul>
+        <div class="lt_login_out">
+            <button id="loginOut" type="button" class="mui-btn mui-btn-outlined">退出</button>
+        </div>
+    </section>
+    <footer>
+        <ul class="mui-clearfix">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="goods.html">
+                    <i class="fa fa-car"></i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li class="current">
+                <a href="vip.html">
+                    <i class="fa fa-user "></i>
+                    <p>个人中心</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+<script type="text/html" id='userTmp'>
 
+    <a href="javascript:;" class="mui-navigate-right">
+        <img class="mui-media-object mui-pull-left" src="images/none.png">
+        <div class="mui-media-body">
+            {{username}}
+            <p class='mui-ellipsis'>{{mobile}}</p>
+        </div>
+    </a>
+</script>
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/commont.js"></script>
+<script src="js/vip.js"></script>
 </body>
-</html>

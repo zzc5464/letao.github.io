@@ -25,6 +25,11 @@ class Tool {
     getParam(key){
         return this.getParamObj()[key];
     }
+    checkLogin(data){
+        if(data.error == 400) {
+            location.href = "login.html?hrefAddr="+location.href;
+        }
+    }
 }
 var t = new Tool();
 

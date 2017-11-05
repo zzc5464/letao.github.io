@@ -10,38 +10,3 @@ nav li img {
     width: 100%;
     height: 100%;
 }
-/*产品部分*/
-.product {
-    padding: 0 10px;
-}
-.product li {
-    width: 48%;
-    border:1px solid #ccc;
-    text-align: center;
-    background-color: #fff;
-    float: left;
-    margin-bottom: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
-}
-.product li:nth-child(odd) {
-    margin-right: 10px;
-}
-.product li img {
-    display: block;
-    width: 100%;
-}
-.product li a {
-    color: #cccccc;
-    display: block;
-
-}
-.product span:nth-of-type(1) {
-    color: #f40;
-}
-.product span:nth-of-type(2) {
-    color: #cccccc;
-    text-decoration: line-through;
-}
-.product button {
-    margin: 5px;
-}

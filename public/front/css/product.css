@@ -1,0 +1,40 @@
+/*footer*/
+.pro_foot {
+    height: 55px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-top:#ccc;
+}
+.pro_foot a {
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+/*item*/
+.mui-slider {
+    margin-bottom: 10px;
+}
+.item {
+    border-top:1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+}
+.price span:first-child{
+    color: red;
+}
+.price span:last-child{
+    color: #ccc;
+    font-size:12px;
+    text-decoration: line-through;
+}
+.size span {
+    line-height: 36px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border:1px solid #ccc;
+    font-size: 12px;
+}
+.size span.current {
+    background-color: #068;
+}
